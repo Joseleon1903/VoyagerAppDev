@@ -1,5 +1,5 @@
 server.port: 8086
-spring.profiles: default
+#spring.profiles: default
 demo.security.jwt:
   tokenExpirationTime: 120 # Number of minutes
   refreshTokenExpTime: 60 # Minutes

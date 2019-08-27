@@ -18,10 +18,7 @@ import java.util.stream.Collectors;
 
 /**
  * Factory class that should be always used to create {@link JwtToken}.
- * 
- * @author vladimir.stankovic
  *
- * May 31, 2016
  */
 @Component
 public class JwtTokenFactory {

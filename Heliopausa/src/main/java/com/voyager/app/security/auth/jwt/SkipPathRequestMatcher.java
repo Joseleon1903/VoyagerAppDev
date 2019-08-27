@@ -11,10 +11,7 @@ import java.util.stream.Collectors;
 
 /**
  * SkipPathRequestMatcher
- * 
- * @author vladimir.stankovic
  *
- * Aug 19, 2016
  */
 public class SkipPathRequestMatcher implements RequestMatcher {
     private OrRequestMatcher matchers;

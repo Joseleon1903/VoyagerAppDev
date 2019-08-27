@@ -10,10 +10,7 @@ import java.util.Collection;
 /**
  * An {@link org.springframework.security.core.Authentication} implementation
  * that is designed for simple presentation of JwtToken.
- * 
- * @author vladimir.stankovic
  *
- *         May 23, 2016
  */
 public class JwtAuthenticationToken extends AbstractAuthenticationToken {
     private static final long serialVersionUID = 2877954820905567501L;

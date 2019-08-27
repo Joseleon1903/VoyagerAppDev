@@ -6,7 +6,7 @@ import com.voyager.app.security.auth.jwt.extractor.TokenExtractor;
 import com.voyager.app.security.auth.jwt.verifier.TokenVerifier;
 import com.voyager.app.config.JwtSettings;
 import com.voyager.app.config.WebSecurityConfig;
-import com.voyager.app.security.exceptions.InvalidJwtToken;
+import com.voyager.app.exceptions.InvalidJwtToken;
 import com.voyager.app.security.model.UserContext;
 import com.voyager.app.security.model.token.JwtToken;
 import com.voyager.app.security.model.token.JwtTokenFactory;
@@ -32,10 +32,7 @@ import java.util.stream.Collectors;
 
 /**
  * RefreshTokenEndpoint
- * 
- * @author vladimir.stankovic
  *
- * Aug 17, 2016
  */
 @RestController
 public class RefreshTokenEndpoint {
@@ -74,7 +71,7 @@ public class RefreshTokenEndpoint {
 
         if (user.getRoles() == null) throw new InsufficientAuthenticationException("User has no roles assigned");
         List<GrantedAuthority> authorities = user.getRoles().stream()
-                .map(authority -> new SimpleGrantedAuthority(authority.getRole().authority()))
+                .map(authority -> new SimpleGrantedAuthority(authority.getName()))
                 .collect(Collectors.toList());
 
         UserContext userContext = UserContext.create(user.getUsername(), authorities);

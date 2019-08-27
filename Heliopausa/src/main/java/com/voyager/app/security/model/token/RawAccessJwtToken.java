@@ -1,6 +1,6 @@
 package com.voyager.app.security.model.token;
 
-import com.voyager.app.security.exceptions.JwtExpiredTokenException;
+import com.voyager.app.exceptions.JwtExpiredTokenException;
 import io.jsonwebtoken.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

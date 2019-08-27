@@ -19,12 +19,6 @@ import org.springframework.util.Assert;
 import java.util.List;
 import java.util.stream.Collectors;
 
-/**
- * 
- * @author vladimir.stankovic
- *
- * Aug 3, 2016
- */
 @Component
 public class RestAuthenticationProvider implements AuthenticationProvider {
 
@@ -53,7 +47,7 @@ public class RestAuthenticationProvider implements AuthenticationProvider {
         if (user.getRoles() == null) throw new InsufficientAuthenticationException("User has no roles assigned");
         
         List<GrantedAuthority> authorities = user.getRoles().stream()
-                .map(authority -> new SimpleGrantedAuthority(authority.getRole().authority()))
+                .map(authority -> new SimpleGrantedAuthority(authority.getName()))
                 .collect(Collectors.toList());
         
         UserContext userContext = UserContext.create(user.getUsername(), authorities);

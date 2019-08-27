@@ -3,8 +3,8 @@ package com.voyager.app.security.auth.jwt;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.voyager.app.common.ErrorCode;
 import com.voyager.app.common.ErrorResponse;
-import com.voyager.app.security.exceptions.AuthMethodNotSupportedException;
-import com.voyager.app.security.exceptions.JwtExpiredTokenException;
+import com.voyager.app.exceptions.AuthMethodNotSupportedException;
+import com.voyager.app.exceptions.JwtExpiredTokenException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -12,18 +12,11 @@ import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.authentication.AuthenticationFailureHandler;
 import org.springframework.stereotype.Component;
-
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-/**
- * 
- * @author vladimir.stankovic
- *
- * Aug 3, 2016
- */
 @Component
 public class CustomAuthenticationFailureHandler implements AuthenticationFailureHandler {
     private final ObjectMapper mapper;

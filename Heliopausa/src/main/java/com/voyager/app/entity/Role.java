@@ -1,16 +1,28 @@
 package com.voyager.app.entity;
 
+import lombok.Data;
+
+import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
+
 /**
- * Enumerated {@link User} roles.
- * 
- * @author vladimir.stankovic
+ *  {@link User} roles.
  *
- * Aug 16, 2016
  */
-public enum Role {
-    ADMIN, PREMIUM_MEMBER, MEMBER;
-    
-    public String authority() {
-        return "ROLE_" + this.name();
-    }
+@Data
+@Entity
+public class Role {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    private String name;
+
+    private String description;
+
+    @ManyToMany(mappedBy = "roles")
+    private Set<User> users =new HashSet<>();
+
 }

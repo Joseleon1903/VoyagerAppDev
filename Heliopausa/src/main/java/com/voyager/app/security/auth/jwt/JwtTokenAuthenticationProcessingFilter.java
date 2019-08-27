@@ -21,10 +21,7 @@ import java.io.IOException;
 
 /**
  * Performs validation of provided JWT Token.
- * 
- * @author vladimir.stankovic
  *
- * Aug 5, 2016
  */
 public class JwtTokenAuthenticationProcessingFilter extends AbstractAuthenticationProcessingFilter {
 

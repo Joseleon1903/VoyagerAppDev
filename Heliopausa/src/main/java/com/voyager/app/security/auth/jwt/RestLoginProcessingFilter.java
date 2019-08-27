@@ -1,7 +1,7 @@
 package com.voyager.app.security.auth.jwt;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.voyager.app.security.exceptions.AuthMethodNotSupportedException;
+import com.voyager.app.exceptions.AuthMethodNotSupportedException;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -22,11 +22,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
- * AjaxLoginProcessingFilter
- * 
- * @author vladimir.stankovic
- *
- * Aug 3, 2016
+ * RestLoginProcessingFilter
  */
 public class RestLoginProcessingFilter extends AbstractAuthenticationProcessingFilter {
     private static Logger logger = LoggerFactory.getLogger(RestLoginProcessingFilter.class);

@@ -20,10 +20,6 @@ import java.util.stream.Collectors;
 /**
  * An {@link AuthenticationProvider} implementation that will use provided
  * instance of {@link JwtToken} to perform authentication.
- * 
- * @author vladimir.stankovic
- *
- * Aug 5, 2016
  */
 @Component
 @SuppressWarnings("unchecked")

@@ -5,12 +5,6 @@ import org.springframework.security.core.GrantedAuthority;
 
 import java.util.List;
 
-/**
- * 
- * @author vladimir.stankovic
- *
- * Aug 4, 2016
- */
 public class UserContext {
     private final String username;
     private final List<GrantedAuthority> authorities;

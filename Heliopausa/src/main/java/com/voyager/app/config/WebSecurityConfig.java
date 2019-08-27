@@ -17,16 +17,12 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.authentication.AuthenticationFailureHandler;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
-
 import java.util.Arrays;
 import java.util.List;
 
 /**
  * WebSecurityConfig
- * 
- * @author vladimir.stankovic
  *
- * Aug 3, 2016
  */
 @Configuration
 @EnableWebSecurity
@@ -93,7 +89,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         List<String> permitAllEndpointList = Arrays.asList(
             AUTHENTICATION_URL,
             REFRESH_TOKEN_URL,
-            "/console"
+            "/h2-console/**"
         );
 
         http

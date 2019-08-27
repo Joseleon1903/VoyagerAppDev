@@ -21,11 +21,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * AjaxAwareAuthenticationSuccessHandler
- * 
- * @author vladimir.stankovic
+ * CustomAuthenticationSuccessHandler
  *
- *         Aug 3, 2016
  */
 @Component
 public class CustomAuthenticationSuccessHandler implements AuthenticationSuccessHandler {
