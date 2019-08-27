@@ -3,6 +3,7 @@ package com.voyager.app.security.auth.jwt;
 import com.voyager.app.entity.User;
 import com.voyager.app.security.model.UserContext;
 import com.voyager.app.service.UserService;
+import com.voyager.app.service.impl.UserServiceImplementation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.BadCredentialsException;
@@ -23,11 +24,12 @@ import java.util.stream.Collectors;
 public class RestAuthenticationProvider implements AuthenticationProvider {
 
     private final BCryptPasswordEncoder encoder;
-    private final UserService userServiceImpl;
 
     @Autowired
-    public RestAuthenticationProvider(final UserService userService, final BCryptPasswordEncoder encoder) {
-        this.userServiceImpl = userService;
+    private UserServiceImplementation userServiceImplementation;
+
+    @Autowired
+    public RestAuthenticationProvider(final BCryptPasswordEncoder encoder) {
         this.encoder = encoder;
     }
 
@@ -38,7 +40,7 @@ public class RestAuthenticationProvider implements AuthenticationProvider {
         String username = (String) authentication.getPrincipal();
         String password = (String) authentication.getCredentials();
 
-        User user = userServiceImpl.getByUsername(username).orElseThrow(() -> new UsernameNotFoundException("User not found: " + username));
+        User user = userServiceImplementation.getByUsername(username).orElseThrow(() -> new UsernameNotFoundException("User not found: " + username));
         
         if (!encoder.matches(password, user.getPassword())) {
             throw new BadCredentialsException("Authentication Failed. Username or Password not valid.");

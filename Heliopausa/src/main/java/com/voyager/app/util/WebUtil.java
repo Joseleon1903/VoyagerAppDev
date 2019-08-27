@@ -1,4 +1,4 @@
-package com.voyager.app.common;
+package com.voyager.app.util;
 
 import org.springframework.security.web.savedrequest.SavedRequest;
 
