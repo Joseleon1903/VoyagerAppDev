@@ -67,7 +67,7 @@ public class RefreshTokenEndpoint {
         }
 
         String subject = refreshToken.getSubject();
-        User user = userService.getByUsername(subject).orElseThrow(() -> new UsernameNotFoundException("User not found: " + subject));
+        User user = userService.findByUsername(subject).orElseThrow(() -> new UsernameNotFoundException("User not found: " + subject));
 
         if (user.getRoles() == null) throw new InsufficientAuthenticationException("User has no roles assigned");
         List<GrantedAuthority> authorities = user.getRoles().stream()

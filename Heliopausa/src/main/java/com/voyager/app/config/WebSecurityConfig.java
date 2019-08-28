@@ -2,6 +2,8 @@ package com.voyager.app.config;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.voyager.app.CustomCorsFilter;
+import com.voyager.app.rest.controller.opend.OtpValidationController;
+import com.voyager.app.rest.controller.opend.RegistrationController;
 import com.voyager.app.security.RestAuthenticationEntryPoint;
 import com.voyager.app.security.auth.jwt.*;
 import com.voyager.app.security.auth.jwt.extractor.TokenExtractor;
@@ -89,6 +91,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         List<String> permitAllEndpointList = Arrays.asList(
             AUTHENTICATION_URL,
             REFRESH_TOKEN_URL,
+//            RegistrationController.REGISTRATION_RESOURCE,
+            OtpValidationController.VALIDATE_OTP_RESOURCE,
             "/h2-console/**"
         );
 

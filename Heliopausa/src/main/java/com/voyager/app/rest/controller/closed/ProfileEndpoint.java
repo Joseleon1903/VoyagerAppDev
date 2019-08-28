@@ -1,4 +1,4 @@
-package com.voyager.app.rest.controller;
+package com.voyager.app.rest.controller.closed;
 
 import com.voyager.app.security.auth.JwtAuthenticationToken;
 import com.voyager.app.security.model.UserContext;

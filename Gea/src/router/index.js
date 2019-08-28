@@ -5,7 +5,6 @@ import Login from '@/components/security/Login'
 import Registration from '@/components/user/register/RegisterUser'
 import OtpValidation from '@/components/security/OtpValidation'
 
-
 Vue.use(Router)
 
 export default new Router({

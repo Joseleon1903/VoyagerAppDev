@@ -48,7 +48,7 @@ public class MockUsuario implements ApplicationListener<ContextRefreshedEvent> {
         profile.setId(1);
         profile.setFirstName("Jose");
         profile.setLastName("De Leon");
-        profile.setEmail("joseleon@gmail.com");
+        user.setEmail("joseleon@gmail.com");
         user.setProfile(profile);
         Role rol =roleRepository.findById(1L).get();
         user.getRoles().add(rol);
