@@ -85,9 +85,9 @@
                 if (!this.formData.password) {
                     this.errors.push("password required.");
                 }
-                if (!this.email) {
+                if (!this.formData.email) {
                     this.errors.push('Email required.');
-                } else if (!this.validEmail(this.email)) {
+                } else if (!this.validEmail(this.formData.email)) {
                     this.errors.push('Valid email required.');
                 }
 
@@ -97,6 +97,8 @@
                       console.log('this error'+ this.errors[index]);
                       this.errorOutput(this.errors[index]);
                     }
+                }else{
+                    this.sendFormSubmit();
                 }
             },
             validEmail: function (email) {
@@ -110,6 +112,21 @@
                     title: 'invalid input',
                     text: message
                 });
+            },
+            sendFormSubmit: function () {
+                console.log("entering sendFormSubmit");
+                this.$http.post('http://localhost:8086/v1/api/registration', this.formData).
+                then(function (response) {
+                    console.log("registration success");
+                    if (response.status === 200) {
+                        this.$session.start();
+                        this.$session.set('username', response.body.username);
+                        this.$router.push('/user/registration/validation/otp');
+                    }
+                }, function (err) {
+                    this.errorOutput(err.body.message);
+                })
+
             }
         }
     }

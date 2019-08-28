@@ -15,3 +15,15 @@ spring.datasource:
 spring.jpa:
   database-platform: org.hibernate.dialect.H2Dialect
 spring.h2.console.enabled: true
+
+smtp.configuration.email:
+  host: 172.22.1.17
+  port: 25
+  username: info@gcs-systems.com
+  #spring.mail.password=
+spring.mail.properties.mail.smtp.auth: false
+spring.mail.properties.mail.smtp.starttls.enable: false
+#smtp.configuration.email.host=smtp.gmail.com
+#smtp.configuration.email.port=587
+#smtp.configuration.email.username=***************
+#smtp.configuration.email.password=***************
