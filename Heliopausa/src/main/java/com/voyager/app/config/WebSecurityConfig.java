@@ -91,7 +91,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         List<String> permitAllEndpointList = Arrays.asList(
             AUTHENTICATION_URL,
             REFRESH_TOKEN_URL,
-//            RegistrationController.REGISTRATION_RESOURCE,
+            RegistrationController.REGISTRATION_RESOURCE,
             OtpValidationController.VALIDATE_OTP_RESOURCE,
             "/h2-console/**"
         );
