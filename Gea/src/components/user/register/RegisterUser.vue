@@ -14,7 +14,7 @@
               <div class="col-lg-12">
                 <form role="form" action="#"  method="post">
 
-                  <div class="form-group" >
+                  <div class="form-group">
                     <label for="firstName">First name</label>
                     <input class="form-control" id="firstName" name="firstName" type="text" v-model="formData.firstName" >
                   </div>
@@ -59,7 +59,7 @@
 </template>
 
 <script>
-    export default {
+export default {
         name: 'RegisterUser',
         data () {
             return {
@@ -115,11 +115,10 @@
             },
             sendFormSubmit: function () {
                 console.log("entering sendFormSubmit");
-                this.$http.post('http://localhost:8086/v1/api/registration', this.formData).
+                this.$http.post(this.API_URL+'/v1/api/registration', this.formData).
                 then(function (response) {
                     console.log("registration success");
                     if (response.status === 200) {
-                        this.$session.start();
                         this.$session.set('username', response.body.username);
                         this.$router.push('/user/registration/validation/otp');
                     }

@@ -14,11 +14,24 @@ let options = {
 Vue.use(VueSession, options);
 Vue.config.productionTip = false;
 Vue.use(Notifications);
-Vue.use(VueResources)
+Vue.use(VueResources);
+// This is a global mixin, it is applied to every vue instance
+Vue.mixin({
+  data: function() {
+    return {
+      globalVar:'global',
+      API_URL: 'http://localhost:8086'
+    }
+  }
+})
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
   router,
   components: { App },
-  template: '<App/>'
-})
+  template: '<App/>',
+  created: function() {
+    console.log('main init vue app');
+
+  }
+});
