@@ -57,16 +57,15 @@ public class CustomAuthenticationSuccessHandler implements AuthenticationSuccess
         userService.save(user);
         
         Map<String, String> tokenMap = new HashMap<String, String>();
-//        tokenMap.put("token", accessToken.getToken());
-//        tokenMap.put("refreshToken", refreshToken.getToken());
+        tokenMap.put("token", accessToken.getToken());
+        tokenMap.put("refreshToken", refreshToken.getToken());
         tokenMap.put("username", userContext.getUsername());
         tokenMap.put("status", user.getStatus());
         tokenMap.put("lastLogin", user.getLastLoginDate().toString());
 
-        //
-
-        response.setHeader("token", accessToken.getToken());
-        response.setHeader("refresh-token", refreshToken.getToken());
+//
+//        response.setHeader("token", accessToken.getToken());
+//        response.setHeader("refresh-token", refreshToken.getToken());
         response.setStatus(HttpStatus.OK.value());
         response.setContentType(MediaType.APPLICATION_JSON_VALUE);
         mapper.writeValue(response.getWriter(), tokenMap);

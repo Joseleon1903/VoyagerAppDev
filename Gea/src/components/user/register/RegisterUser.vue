@@ -3,7 +3,7 @@
   <div id="wrapper">
 
     <!-- /#page-registration form  -->
-    <div id="form-registration" @submit="checkForm" method="post" novalidate="true">
+    <div id="form-registration" @submit="checkForm" novalidate="true">
       <div class="col-lg-12">
         <div class="panel panel-green">
           <div class="panel-heading">

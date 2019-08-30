@@ -40,7 +40,7 @@
         methods:{
             checkOtpValidation: function () {
                 console.log('entering checkOtpValidation');
-                this.errors.shift()
+                this.errors.shift();
                 console.log('error lenght :'+ this.errors.length);
 
                 if (!this.otpValue.otpTextField.length) {

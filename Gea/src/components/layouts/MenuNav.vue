@@ -1,0 +1,45 @@
+<template>
+
+  <div class="navbar-default sidebar" role="navigation" style="margin-top: 0.5em;">
+    <div class="sidebar-nav navbar-collapse">
+      <ul class="nav in" id="side-menu">
+        <li>
+          <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+        </li>
+        <li class="">
+          <a href="#"><i class="fa fa-tasks"></i> Board<span class="fa arrow"></span></a>
+          <ul class="nav nav-second-level collapse in" aria-expanded="true" style="">
+            <li>
+              <a href="flot.html">  <i class="fa fa-tag"></i> Work item</a>
+            </li>
+            <li>
+              <a href="morris.html"> <i class="fa fa-th"></i> Kanban Board</a>
+            </li>
+          </ul>
+          <!-- /.nav-second-level -->
+        </li>
+
+        <li>
+          <a href="index.html"><i class="fa fa-road"></i> Sprint</a>
+        </li>
+
+        <li>
+          <a href="index.html"><i class="fa fa-book"></i> Wiki</a>
+        </li>
+
+      </ul>
+    </div>
+    <!-- /.sidebar-collapse -->
+  </div>
+
+</template>
+
+<script>
+    export default {
+        name: "MenuNav"
+    }
+</script>
+
+<style scoped>
+
+</style>

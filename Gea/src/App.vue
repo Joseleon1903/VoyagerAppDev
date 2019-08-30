@@ -7,7 +7,24 @@
 
 <script>
 export default {
-  name: 'App'
+  name: 'App',
+    data () {
+        return {
+            formData:{ firstName: '', lastName: '', email: '' , confirmPassword: '', password: '' },
+            errors: [],
+        }
+    },
+    methods:{
+        errorNotify: function (message) {
+            this.$notify({
+                group: 'foo',
+                type:'error',
+                title: 'invalid input',
+                text: message
+            });
+        },
+
+    }
 }
 </script>
 
@@ -18,6 +35,5 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 </style>

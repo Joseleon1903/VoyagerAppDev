@@ -5,7 +5,6 @@ import org.springframework.stereotype.Component;
 import javax.validation.constraints.NotBlank;
 import java.io.Serializable;
 
-@Component
 @Data
 public class RegistrationDTO implements Serializable {
 
