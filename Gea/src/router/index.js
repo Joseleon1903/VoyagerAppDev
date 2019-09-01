@@ -6,6 +6,7 @@ import Registration from '@/components/user/register/RegisterUser'
 import OtpValidation from '@/components/security/OtpValidation'
 import Home from '@/components/home/Home'
 import HeaderBase from '@/components/layouts/HeaderBase'
+import CreationProject from '@/components/action/CreationProject'
 
 
 Vue.use(Router)
@@ -41,6 +42,11 @@ export default new Router({
       path: '/header',
       name: 'HeaderBase',
       component: HeaderBase
+    },
+    {
+      path: '/creation/project',
+      name: 'CreationProject',
+      component: CreationProject
     }
   ]
 })
