@@ -1,5 +1,6 @@
 package com.voyager.app.service.impl;
 
+import com.voyager.app.constant.ConstantApplication;
 import com.voyager.app.entity.User;
 import com.voyager.app.service.UserService;
 import com.voyager.app.repository.UserRepository;
@@ -23,6 +24,12 @@ public class UserServiceImpl implements UserService {
     @Override
     public Optional<User> findByUsername(String username) {
         return userRepository.findByUsername(username);
+    }
+
+    @Override
+    public Iterable<User> searchByUsernameActive(String username) {
+        String name = '%'+username+'%';
+        return userRepository.findByUsernameAndAndStatus(name, ConstantApplication.STATUS_A);
     }
 
     @Override

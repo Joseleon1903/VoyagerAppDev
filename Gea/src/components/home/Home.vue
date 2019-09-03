@@ -30,15 +30,12 @@
               Create a project to get started
             </div>
             <div class="panel-body">
-              <form role="form"  method="POST">
                 <fieldset>
                   <div class="form-group">
-                    <input class="form-control" placeholder="Project name"  type="text" name="username" autofocus />
+                    <input class="form-control" placeholder="Project name"  type="text" name="projectName" v-model="projectName" autofocus />
                   </div>
-                  <input class="btn btn-primary" size="2" type="submit" value="Create project"/>
+                  <input class="btn btn-primary" size="2" type="submit" value="Create project" v-on:click="sendToCreateProject"/>
                 </fieldset>
-              </form>
-
             </div>
           </div>
         </div>
@@ -183,15 +180,36 @@
 
     export default {
         name: "Home",
+
         components: {
             HeaderBase,
             MenuNav
+        },
+        data () {
+            return {
+                projectName: '',
+                errors: [],
+            }
         },
         mounted() {
             console.log("init mounted");
             console.log("user: "+   this.$session.get('username'));
             console.log("token: "+   this.$session.get('token'));
             console.log("status: "+   this.$session.get('status'));
+        },
+        methods:{
+
+            sendToCreateProject: function() {
+                console.log("entering sendToCreateProject");
+                if (!this.projectName) {
+                    this.$parent.errorNotify('project name is required.');
+                    return;
+                }
+                console.log('redirect to project creation');
+                this.$session.set('projectName',this.projectName );
+                this.$router.push('/creation/project');
+            }
+
         }
     }
 </script>

@@ -14,6 +14,8 @@ public interface UserService {
 
      Optional<User> findByUsername(String username);
 
+     Iterable<User> searchByUsernameActive(String username);
+
      User save(User user);
 
      Iterable<User> findAllUsers();
