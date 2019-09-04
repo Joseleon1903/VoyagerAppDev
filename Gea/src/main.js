@@ -23,7 +23,13 @@ Vue.mixin({
       API_URL: 'http://localhost:8086'
     }
   }
-})
+});
+Vue.http.interceptors.push(function (request) {
+
+  // modify headers
+  request.headers.set('X-CSRF-TOKEN', 'TOKEN');
+  request.headers.set('Authorization', 'Bearer ' + this.$session.get('token'));
+});
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

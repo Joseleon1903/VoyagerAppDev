@@ -1,7 +1,7 @@
 package com.voyager.app.config;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.voyager.app.CustomCorsFilter;
+import com.voyager.app.filter.CustomCorsFilter;
 import com.voyager.app.rest.controller.opend.OtpValidationController;
 import com.voyager.app.rest.controller.opend.RegistrationController;
 import com.voyager.app.security.RestAuthenticationEntryPoint;
@@ -10,7 +10,6 @@ import com.voyager.app.security.auth.jwt.extractor.TokenExtractor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.http.HttpHeaders;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -20,11 +19,7 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.authentication.AuthenticationFailureHandler;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
-import org.springframework.web.cors.CorsConfiguration;
-import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
-import org.springframework.web.filter.CorsFilter;
 
-import javax.servlet.FilterConfig;
 import java.util.Arrays;
 import java.util.List;
 

@@ -5,7 +5,6 @@ import lombok.Data;
 import javax.persistence.*;
 import java.util.Date;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -37,6 +36,6 @@ public class Project {
             joinColumns = { @JoinColumn(name = "project_id") },
             inverseJoinColumns = { @JoinColumn(name = "user_id") }
     )
-    private List<User> members;
+    private Set<User> members = new HashSet<>();
 
 }

@@ -1,4 +1,4 @@
-package com.voyager.app;
+package com.voyager.app.filter;
 
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;

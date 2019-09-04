@@ -25,7 +25,6 @@ public class ProjectController {
 
     private static Logger log = LogManager.getLogger(ProfileEndpoint.class);
 
-
     @Autowired
     private UserServiceImpl userService;
 

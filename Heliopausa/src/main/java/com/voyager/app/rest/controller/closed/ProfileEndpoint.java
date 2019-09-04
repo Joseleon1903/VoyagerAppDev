@@ -17,7 +17,6 @@ public class ProfileEndpoint {
 
     private static Logger log = LogManager.getLogger(ProfileEndpoint.class);
 
-
     @RequestMapping(value="/api/me", method= RequestMethod.GET)
     public @ResponseBody UserContext get(JwtAuthenticationToken token) {
         log.info("entering api / me");
